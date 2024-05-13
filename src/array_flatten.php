@@ -11,20 +11,25 @@
  * @param  array $options
  * @return array
  */
-function array_flatten($array,$options = array()) {
+function array_flatten($array,$preserve_keys = false) {
 	if (!is_array($array)) { 
 		return false;
 	}
-	$options += array(
-		"preserve_keys" => false,
-	);
+
+	if(is_array($preserve_keys)){
+		$options = $preserve_keys;
+		$options += array(
+			"preserve_keys" => false,
+		);
+		$preserve_keys = $options["preserve_keys"];
+	}
 
 	$result = array();
 	foreach ($array as $key => $value) {
 		if (is_array($value)) { 
-			$result = array_merge($result, array_flatten($value, $options));
+			$result = array_merge($result, array_flatten($value, $preserve_keys));
 		} else {
-			$key = $options["preserve_keys"] ? $key : 0;
+			$key = $preserve_keys ? $key : 0;
 			$result = array_merge($result, array($key => $value));
 		} 
 	} 

@@ -8,7 +8,7 @@ Convert a multi-dimensional array into a single-dimensional array
 Function signature
 ------------------
 
-    array_flatten(array $array, array $options = []): array
+    array_flatten(array $array, bool $preserve_keys = false): array
 
 #### Parameters
 
@@ -16,13 +16,9 @@ Function signature
 
 The multi-dimensional array.
 
-**options**
+**preserve_keys**
 
-The default options are:
-
-    Array(
-      "preserve_keys" => false
-    )
+Whether or not to preserve keys in the output array.
 
 #### Return value
 
