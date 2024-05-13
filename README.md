@@ -31,13 +31,13 @@ Usage
 
     $ar = ["x" => "a", "y" => ["z" => "b", "c"]];
     array_flatten($ar); // ["a", "b", "c"]
-    array_flatten($ar,["preserve_keys" => false]); // ["a", "b", "c"]
-    array_flatten($ar,["preserve_keys" => true]); // ["x" => "a", "z" => "b", 0 => "c"]
+    array_flatten($ar,false); // ["a", "b", "c"]
+    array_flatten($ar,true); // ["x" => "a", "z" => "b", 0 => "c"]
 
     // !! duplicit key "x"
     $ar = ["x" => "a", "y" => ["z" => "b", "x" => "c"]];
     array_flatten($ar); // ["a", "b", "c"]
-    array_flatten($ar,["preserve_keys" => true]); // ["x" => "c", "z" => "b"]
+    array_flatten($ar,true); // ["x" => "c", "z" => "b"]
 
 Installation
 ------------
