@@ -1,7 +1,7 @@
 ArrayFlatten
 ============
 
-[![Build Status](https://app.travis-ci.com/yarri/ArrayFlatten.svg?token=Kc7UxgK5oqFG8sZAhCzg&branch=master)](https://app.travis-ci.com/yarri/ArrayFlatten)
+[![Tests](https://github.com/yarri/ArrayFlatten/actions/workflows/tests.yml/badge.svg)](https://github.com/yarri/ArrayFlatten/actions/workflows/tests.yml)
 
 Convert a multi-dimensional array into a single-dimensional array
 
